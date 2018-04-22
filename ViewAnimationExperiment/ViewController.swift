@@ -10,9 +10,19 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var redRec: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+//        UIView.animate(withDuration: 2){self.redRec.backgroundColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)}
+        
+        let animator = UIViewPropertyAnimator(duration: 2, curve: .easeInOut)
+        {
+            self.redRec.backgroundColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
+        }
+        
+        animator.startAnimation()
     }
 
     override func didReceiveMemoryWarning() {
